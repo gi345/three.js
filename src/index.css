@@ -1,0 +1,149 @@
+@import url('https://fonts.cdnfonts.com/css/general-sans');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling behavior */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #000; /* Default text color set to black */
+  font-family: 'General Sans', sans-serif;
+  font-size: 18px; /* Reduced from 14px for smaller global text */
+}
+
+@layer utilities {
+  .c-space {
+    @apply sm:px-10 px-5;
+  }
+
+  .head-text {
+    @apply sm:text-3xl text-2xl font-semibold; /* Reduced heading sizes */
+    color: #000; /* Black text for headings */
+  }
+
+  .nav-ul {
+    @apply flex flex-col items-center gap-4 sm:flex-row md:gap-6 relative z-20;
+  }
+
+  .nav-li {
+    @apply text-neutral-400 hover:text-black font-generalsans max-sm:hover:bg-gray-200 max-sm:w-full max-sm:rounded-md py-2 max-sm:px-5;
+  }
+
+  .nav-li_a {
+    @apply text-sm md:text-base hover:text-black transition-colors; /* Reduced font sizes */
+  }
+
+  .nav-sidebar {
+    @apply absolute left-0 right-0 bg-gray-200 backdrop-blur-sm transition-all duration-300 ease-in-out overflow-hidden z-20 mx-auto sm:hidden block;
+  }
+
+  .grid-container {
+    @apply w-full h-full border border-gray-300 bg-gray-100 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+  }
+
+  .grid-headtext {
+    @apply text-lg font-semibold mb-2 font-generalsans; /* Smaller heading size */
+    color: #000; /* Black color for headings */
+  }
+
+  .grid-subtext {
+    @apply text-xs text-[#afb0b6] font-generalsans; /* Extra small subtext */
+  }
+
+  .copy-container {
+    @apply cursor-pointer flex justify-center items-center gap-2;
+  }
+
+  .field-label {
+    @apply text-sm; /* Reduced label size */
+    color: #000; /* Ensure black label text */
+  }
+
+  .field-input {
+    @apply w-full px-5 py-2 min-h-14 rounded-lg placeholder:text-gray-500 text-sm shadow-xl focus:outline-none;
+    background-color: #f9f9f9;
+    color: #000; /* Input text color black */
+  }
+
+  .field-btn {
+    @apply bg-gray-500 px-5 py-2 min-h-12 rounded-lg shadow-lg flex justify-center items-center text-sm text-white gap-3;
+  }
+
+  .field-btn_arrow {
+    @apply w-2.5 h-2.5 object-contain invert brightness-0;
+  }
+
+  .btn {
+    @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-gray-300 transition-all active:scale-95 text-black mx-auto;
+  }
+
+  .btn-ping {
+    @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+  }
+
+  .btn-ping_dot {
+    @apply relative inline-flex rounded-full h-3 w-3 bg-green-500;
+  }
+
+  .social-icon {
+    @apply w-12 h-12 rounded-full flex justify-center items-center bg-gray-300 border border-gray-200;
+  }
+}
+
+/* Waving hand animation */
+.waving-hand {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+/* Arrow gradient */
+.arrow-gradient {
+  background-image: linear-gradient(to right,
+      rgba(255, 255, 255, 0.1) 10%,
+      rgba(255, 255, 255, 0.000025) 50%,
+      rgba(255, 255, 255, 0.000025) 50%,
+      rgba(255, 255, 255, 0.025) 100%);
+}
+
+/* Keyframe for wave animation */
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  15% {
+    transform: rotate(14deg);
+  }
+
+  30% {
+    transform: rotate(-8deg);
+  }
+
+  40% {
+    transform: rotate(14deg);
+  }
+
+  50% {
+    transform: rotate(-4deg);
+  }
+
+  60% {
+    transform: rotate(10deg);
+  }
+
+  70% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
